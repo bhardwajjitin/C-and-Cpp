@@ -1,0 +1,24 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    multiset<int>ml;
+    vector<int>arr={2,3,4,5,7};
+    for(auto i:arr){
+        ml.insert(i);
+    }
+    int ans=0;
+    while(ml.size()>1){
+        int first=*ml.begin();
+        int second=*ml.end();
+        int cost=((second+first)/(second-first+1));
+        int sum=second+first;
+        ans+=cost;
+        ml.insert(sum);
+    }
+    for(auto it:ml){
+        cout<<it<<endl;
+    }
+    cout<<ans<<endl;
+    return 0;
+}
